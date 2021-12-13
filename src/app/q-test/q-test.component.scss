@@ -1,0 +1,31 @@
+.head{
+    text-align: center;
+}
+.quiz{
+    margin: 2%;
+    border: 3px black solid;
+    border-radius: 1%;
+}
+
+
+.question{
+    margin: 2%;
+}
+.answers{
+    margin-left: 4%;
+}
+.sub{
+    background-color: rgb(0, 255, 55);
+    border-radius: 10px;
+    font-size: 150%;
+    width: 20%;
+    height: 50px;
+    margin-left: 40%;
+    margin-bottom: 3%;
+}
+.sub:hover{
+    cursor: pointer;
+    background-color: rgb(16, 193, 252);
+   
+}
+

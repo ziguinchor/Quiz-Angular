@@ -1,0 +1,48 @@
+
+
+<form (ngSubmit)="sendanswers()" class="quiz">
+    <!-- subject -->
+    <h1 class="head">Welcome to your daily trivia!</h1>
+
+    <!-- loop for question from node js server  -->
+    <div class="question" *ngFor="let q of qus; let i =index">
+
+        <!-- display head wuestion and number -->
+        <h2>Q.{{q.id}} {{q.question}}</h2>
+
+    
+        <!-- display choices in radio button and send selected choice to ts   -->
+        <div class="answers">
+            <h3>
+                <input type="radio" required value="{{q.choice1}}" #v1 name="{{i}}"(change) ="addAnswer(q.choice1,i)"> &nbsp;
+                <span>a.{{q.choice1.value}}</span>
+            </h3>
+            <h3>
+                <input type="radio" required value="{{q.choice2}}" #v name="{{i}}"(change) ="addAnswer(q.choice2,i)"> &nbsp;
+                <span>b.{{q.choice2.value}}</span>
+            </h3>
+            <h3>
+                <input type="radio" required value="{{q.choice3}}"#v name="{{i}}"  (change) ="addAnswer(q.choice3,i)"> &nbsp;
+                <span>c.{{q.choice3.value}}</span>
+            </h3>
+            <h3>
+                <input type="radio" required value="{{q.choice4}}"#v name="{{i}}"(change) ="addAnswer(q.choice4,i)"> &nbsp;
+                <span>d.{{q.choice4.value}}</span>
+            </h3>
+        </div>
+
+    </div>
+
+    <input class="sub"  type="submit" >
+
+    <!-- display correction for answers and convert to json like in video -->
+    <h4 *ngFor="let item of jsonresults">{{item|json}}</h4>
+
+
+    <!-- this message is Score -->
+    <h2>{{message}}</h2>
+</form>
+<br>
+
+
+
